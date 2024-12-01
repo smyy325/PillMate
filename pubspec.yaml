@@ -39,6 +39,10 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   shared_preferences: ^2.3.3
   # login-signup
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.5.0
+  fluttertoast: ^8.2.8
 
 dev_dependencies:
   flutter_test:

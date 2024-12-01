@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/loginSignup/auth/login_or_register.dart';
 import 'package:pill_mate/onboarding/onboarding_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -101,7 +102,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             //After we press get started button this onboarding value become true
             // same key
             if(!mounted)return;
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginOrRegister()));
           },
           child: const Text("Get started",style: TextStyle(color: Colors.white),)),
     );

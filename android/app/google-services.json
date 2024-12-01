@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "488019695495",
+    "project_id": "pillmate-e753c",
+    "storage_bucket": "pillmate-e753c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488019695495:android:8509c69cf2c0f9c87f6522",
+        "android_client_info": {
+          "package_name": "com.pillmate.pill_mate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjk_dP4hJ9aZIccRnJbtR7S-i3jKvrbFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
