@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:pill_mate/loginSignup/login.dart';
 import 'package:pill_mate/loginSignup/register.dart';
 
@@ -22,7 +22,8 @@ class _LoginOrRegisterState extends State<LoginOrRegister> {
       return LoginPage(onTap: togglePages);
     }
     else {
-      return RegisterPage(onTap: togglePages);
+      return SignUpPage(onTap: togglePages);
     }
   }
 }
+*/

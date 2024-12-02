@@ -1,14 +1,18 @@
-import 'package:firebase_auth/firebase_auth.dart';
+/*import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pill_mate/loginSignup/auth/login_or_register.dart';
+import 'package:pill_mate/loginSignup/auth/service.dart';
 import 'package:pill_mate/loginSignup/component/button.dart';
 import 'package:pill_mate/loginSignup/component/textfield.dart';
+import 'package:pill_mate/loginSignup/login.dart';
 import 'package:pill_mate/onboarding/onboarding_view.dart';
+import 'package:pill_mate/reminder/homme.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
   RegisterPage({
     super.key,
-    required this.onTap,
+    this.onTap,
   });
 
   @override
@@ -21,10 +25,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
   final TextEditingController _passwordController= TextEditingController();
 
-  final TextEditingController _confirmPasswordController= TextEditingController();
+  final TextEditingController _userNameController= TextEditingController();
 
-  final TextEditingController _nameController= TextEditingController();
-
+  final AuthServices _services = AuthServices();
+  
   void login(){}
 
   @override
@@ -99,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       MyTextField(
                         hintText: 'NAME SURNAME',
                         icon:const Icon(Icons.person_outline),
-                        controller: _nameController,
+                        controller: _userNameController,
                         obsecureText: false,
                       ),
                       const SizedBox(height: 10,),
@@ -116,21 +120,30 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: _passwordController,
                         obsecureText: true,
                       ),
-                      const SizedBox(height: 10,),
-                      MyTextField(
-                        hintText: 'CONFIRM PASSWORD',
-                        icon:const Icon(Icons.lock_outline),
-                        controller: _confirmPasswordController,
-                        obsecureText: true,
-                      ),
                       const SizedBox(height: 25,),
                       Button(
                         text: 'REGISTER',
-                        onPressed: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+                        onPressed: () async {
+                          try {
+                            await _services.signUp(
+                              _userNameController.text,
+                              _emailController.text,
+                              _passwordController.text,
+                            );
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => LoginOrRegister()),
+                            );
+                          } catch (e) {
+                            print("Kayıt sırasında hata: $e");
+                          }
 
+                          _userNameController.clear();
+                          _emailController.clear();
+                          _passwordController.clear();
                         },
                       ),
+
                       const SizedBox(height: 25,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -161,4 +174,184 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
 
+}
+*/
+
+
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:pill_mate/Navbar.dart';
+import 'package:pill_mate/loginSignup/auth/service.dart';
+import 'package:pill_mate/loginSignup/login.dart';
+class SignUpPage extends StatefulWidget {
+  @override
+  _SignUpPageState createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  final AuthServices _auth = AuthServices();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/signup.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.only(top: 100.0),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        width: 250.0,
+                        child: DefaultTextStyle(
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey[700],
+                          ),
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TyperAnimatedText('Existing Member? Log In to Get Started!', speed: Duration(milliseconds: 200)),
+                            ],
+                            isRepeatingAnimation: false,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      TextField(
+                        controller: _nameController,
+                        style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white60,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.black87),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          labelText: "Full Name",
+                          labelStyle: TextStyle(
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      TextField(
+                        controller: _emailController,
+                        style: TextStyle(color: Colors.black87),
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white60,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.black87),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          labelText: "Email",
+                          labelStyle: TextStyle(
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      TextField(
+
+                        controller: _passController,
+                        style: TextStyle(color: Colors.black87),
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white60,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.white60),
+
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+
+                          ),
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      SizedBox(
+                        width: 350,
+                        height: 50,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green[200]
+                          ),
+                          onPressed: () async {
+                            User? user = await _auth.registerWithEmailAndPassword(
+                              _nameController.text,
+                              _emailController.text,
+                              _passController.text,
+                            );
+
+                            if (user != null) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => NavbarPage()),
+                              );
+                            }
+                          },
+                          child: Text(
+
+                            'Sign Up',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black87
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'Access Your Account',
+                        style: TextStyle(color: Colors.grey[800], fontSize: 15),
+                        textAlign: TextAlign.center,
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Text("Log In Now!", style: TextStyle(color: Colors.green[300], fontSize: 18)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
