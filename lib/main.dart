@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // 5 saniye bekleyip onboarding ekranına geçiş yapıyoruz
-    Timer(Duration(seconds: 7), () {
+    Timer(Duration(seconds: 4), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => OnboardingView(),
@@ -53,15 +53,13 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // Arka plan resmi
           Image.asset(
             "assets/splash.jpg",
             fit: BoxFit.cover,
           ),
-          // Ortadaki isim
           Center(
             child: Text(
-              "HAPÇI",//PillMate
+              "PillMate",//PillMate
               style: TextStyle(
                 fontSize: 80.0,
                 fontWeight: FontWeight.bold,
