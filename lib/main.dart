@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'firebase_options.dart';
 
 import 'package:pill_mate/onboarding/onboarding_view.dart';
@@ -10,7 +12,10 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp( MyApp());
+  //Gemini.init(apiKey: );
+  runApp(ProviderScope(
+    child: MyApp(),
+  ),);
 }
 
 class MyApp extends StatelessWidget {

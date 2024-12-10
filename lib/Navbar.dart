@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:pill_mate/gemini/chat.dart';
+import 'package:pill_mate/gemini/Screen.dart';
 import 'package:pill_mate/reminder/homme.dart';
 
 class NavbarPage extends StatefulWidget {
@@ -13,8 +13,8 @@ class _NavbarPageState extends State<NavbarPage> {
 
   final List<Widget> _pages = [
 
-    Home(),
-    ChatPage(),
+    TodoPage(),
+    GeminiChat(),
   ];
 
   void _navigateBottomBar(int index) {
