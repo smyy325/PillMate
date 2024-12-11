@@ -95,7 +95,7 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                     Expanded(
                       child: RadioWidget(
                         categoryColor: Colors.greenAccent,
-                        titleRadio: "LRN",
+                        titleRadio: "MRN",
                         valueInput: 1,
                         onChangeValue: () => ref
                             .read(radioProvider.notifier)
@@ -105,7 +105,7 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                     Expanded(
                       child: RadioWidget(
                         categoryColor: Colors.blue.shade700,
-                        titleRadio: "WRK",
+                        titleRadio: "NN",
                         valueInput: 2,
                         onChangeValue: () => ref
                             .read(radioProvider.notifier)
@@ -115,7 +115,7 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                     Expanded(
                       child: RadioWidget(
                         categoryColor: Colors.amberAccent.shade700,
-                        titleRadio: "GEN",
+                        titleRadio: "EVN",
                         valueInput: 3,
                         onChangeValue: () => ref
                             .read(radioProvider.notifier)
@@ -208,13 +208,13 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                           String category = '';
                           switch (getRadiovalue) {
                             case 1:
-                              category = 'Learning';
+                              category = 'Morning';
                               break;
                             case 2:
-                              category = 'Working';
+                              category = 'Noon';
                               break;
                             case 3:
-                              category = 'General';
+                              category = 'Evening';
                               break;
                           }
                           ref.read(serviceProvider).addNewTask(TodoModel(

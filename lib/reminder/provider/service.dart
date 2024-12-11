@@ -9,7 +9,7 @@ final serviceProvider = StateProvider<TodoService>((ref) {
 
 final fetchStreamProvider = StreamProvider<List<TodoModel>>((ref) async* {
   final getData = FirebaseFirestore.instance
-      .collection('todo')
+      .collection('todoApp')
       .snapshots()
       .map((event) => event.docs
       .map((snapshot) => TodoModel.fromSnapshot(snapshot))
