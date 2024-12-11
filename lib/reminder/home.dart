@@ -76,8 +76,8 @@ class TodoPage extends ConsumerWidget {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFD5EBFA),
-                        foregroundColor: Colors.blue.shade700,
+                        backgroundColor: Colors.white, //Color(0xFFD5EBFA),
+                        foregroundColor: Colors.black,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -89,7 +89,7 @@ class TodoPage extends ConsumerWidget {
                       context: context,
                       builder: (context) => const AddNewTaskModel(),
                     ),
-                    child: const Text("+ New Drug"),
+                    child: const Text("+ New Drug", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                   ),
                 ],
               ),
