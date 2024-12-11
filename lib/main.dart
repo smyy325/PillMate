@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Text(
               "PillMate",//PillMate
               style: TextStyle(
-                fontSize: 80.0,
+                fontSize: 60.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.green[200],
               ),
