@@ -18,13 +18,13 @@ class CardTodoListWidget extends ConsumerWidget {
         final getCategory=todoData[getIndex].category;
         Color categoryColor=Colors.white;
         switch(getCategory){
-          case 'Learning':
+          case 'Morning':
             categoryColor=Colors.green;
             break;
-          case 'Working':
+          case 'Noon':
             categoryColor=Colors.blue.shade700;
             break;
-          case 'General':
+          case 'Evening':
             categoryColor=Colors.amber.shade700;
             break;
         }
