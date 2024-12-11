@@ -29,7 +29,7 @@ class _NavbarPageState extends State<NavbarPage> {
       body: _pages[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white60,
-        buttonBackgroundColor: Colors.purple[50],
+        buttonBackgroundColor: Colors.green[50],
         height: 60,
         animationDuration: Duration(milliseconds: 300),
         index: _selectedIndex,

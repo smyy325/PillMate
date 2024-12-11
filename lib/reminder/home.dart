@@ -47,7 +47,7 @@ class TodoPage extends ConsumerWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.green[50],
       body: SingleChildScrollView(
 
         child: Padding(
