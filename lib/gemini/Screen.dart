@@ -42,10 +42,14 @@ class _GeminiChatState extends State<GeminiChat> {
     return Scaffold(
       //backgroundColor: Colors.green[200],
       appBar: AppBar(
-        //backgroundColor: Colors.green[200],
+        backgroundColor: Colors.green[400],
+        foregroundColor: Colors.white,
         elevation: 3,
-        title:const Text("Gemini"),
+        title:Center(child: const Text("Gemini",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        )),
       ),
+      backgroundColor: Colors.green[50],
       body: Column(
         children: [
           Expanded(
