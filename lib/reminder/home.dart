@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,14 +18,14 @@ class TodoPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.purple[200],
+        backgroundColor: Colors.green[400],
         foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
         title: const Padding(
           padding: EdgeInsets.all(40.0),
           child: Text(
-            "To-Do Page",
+            "PillMate",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
           ),
         ),
@@ -48,7 +47,9 @@ class TodoPage extends ConsumerWidget {
           ),
         ],
       ),
+      backgroundColor: Colors.green[100],
       body: SingleChildScrollView(
+
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 30),
           child: Column(
@@ -61,7 +62,7 @@ class TodoPage extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Today's Task",
+                        "Today's Medicines",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -69,7 +70,7 @@ class TodoPage extends ConsumerWidget {
                       ),
                       Text(
                         formattedDate,
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Colors.black87),
                       ),
                     ],
                   ),
@@ -88,7 +89,7 @@ class TodoPage extends ConsumerWidget {
                       context: context,
                       builder: (context) => const AddNewTaskModel(),
                     ),
-                    child: const Text("+ New Task"),
+                    child: const Text("+ New Drug"),
                   ),
                 ],
               ),

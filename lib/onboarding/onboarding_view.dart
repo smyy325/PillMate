@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/loginSignup/auth/login_or_register.dart';
 import 'package:pill_mate/loginSignup/login.dart';
 import 'package:pill_mate/onboarding/onboarding_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';

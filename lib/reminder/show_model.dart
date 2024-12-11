@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -50,7 +49,7 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                 SizedBox(
                   width: double.infinity,
                   child: Text(
-                    "New Task Todo",
+                    "New Task Reminder",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,
@@ -65,13 +64,13 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                 ),
                 Gap(12),
                 Text(
-                  "Title Task",
+                  "Add Drug",
                   style: AppStyle.headingOne,
                 ),
                 Gap(6),
                 TextFieldWidget(
                   maxLine: 1,
-                  hintText: "Add Task Name",
+                  hintText: "Add Drug Name",
                   txtController: titleController,
                 ),
                 Gap(12),
@@ -87,8 +86,10 @@ class _AddNewTaskModelState extends State<AddNewTaskModel> {
                 ),
                 Gap(12),
                 Text(
+
                   "Category",
                   style: AppStyle.headingOne,
+
                 ),
                 Row(
                   children: [

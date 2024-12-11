@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:pill_mate/gemini/Screen.dart';
-import 'package:pill_mate/reminder/homme.dart';
+import 'package:pill_mate/reminder/home.dart';
 
 class NavbarPage extends StatefulWidget {
   @override
