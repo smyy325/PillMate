@@ -17,32 +17,32 @@ PillMate is a mobile application that helps users track and manage their medicat
 - **Gemini Chat Screen**: Chat interface powered by Gemini AI for quick Q&A or detailed medication info.
 
 ## Technologies & Packages
-'''
-# Onboarding
+```flutter
+#Onboarding
 smooth_page_indicator: ^1.2.0+3
 shared_preferences: ^2.3.3
 
-# Login & Signup
+#Login & Signup
 firebase_core: ^3.8.0
 firebase_auth: ^5.3.3
 cloud_firestore: ^5.5.0
 fluttertoast: ^8.2.8
 
-# Animations
+#Animations
 animated_text_kit: ^4.2.2
 curved_navigation_bar: ^1.0.6
 
-# Gemini
+#Gemini
 dash_chat_2: ^0.0.21
 flutter_gemini: ^3.0.0
 image_picker: ^1.1.2
 google_generative_ai: ^0.4.6
 speech_to_text: ^7.0.0
 
-# Home Screen & General
+#Home Screen & General
 flutter_riverpod: ^2.6.1
 gap: ^3.0.1
 provider: ^6.1.2
 intl: ^0.19.0
-'''
+```
 
